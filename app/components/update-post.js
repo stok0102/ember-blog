@@ -14,6 +14,7 @@ export default Ember.Component.extend({
         content: this.get('content'),
         image: this.get('image'),
       };
+      console.log(params.content.split(/(\n)\W/ig));
       this.set('updatePostForm', false);
       this.sendAction('update', model, params);
     }
