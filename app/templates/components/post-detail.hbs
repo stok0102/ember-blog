@@ -9,5 +9,6 @@
       {{model.content}}
     </p>
   </div>
-  <button {{action 'delete' model}}>Shred File</button>
+  {{update-post model=model update="update"}}<br>
+  <button class="btn btn-danger center-block" {{action 'delete' model}}>Shred File</button>
 </div>
