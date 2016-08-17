@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="conspiracy">
+    <img src={{model.image}} alt={{model.title}} />
+    <h2>{{model.title}}</h2>
+    <h5>by {{model.author}}</h5>
+    <h5>Case Status: {{model.category}}</h5>
+    <br>
+    <p>
+      {{model.content}}
+    </p>
+  </div>
+  <button {{action 'delete' model}}>Shred File</button>
+</div>

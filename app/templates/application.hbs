@@ -2,10 +2,10 @@
   <header class="jumbotron">
     <h1>The Foxhole</h1>
   </header>
+  <ul class="nav nav-tabs">
+    <li role="presentation">{{#link-to 'index'}}Home{{/link-to}}</li>
+    <li role="presentation">{{#link-to 'about'}}About{{/link-to}}</li>
+    <li role="presentation">{{#link-to 'contact'}}Contact{{/link-to}}</li>
+  </ul>
   {{outlet}}
 </div>
-  <footer class="footer">
-    {{#link-to 'index'}}Home{{/link-to}}<br>
-    {{#link-to 'contact'}}Contact Us{{/link-to}}<br>
-    {{#link-to 'about'}}About Us{{/link-to}}
-  </footer>
