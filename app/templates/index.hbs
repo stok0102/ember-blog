@@ -1,8 +1,10 @@
 <h3>Recent Cases</h3>
 <br>
-{{#each model as |post|}}
-  <div class="conspiracy">
-    <h4>{{post.title}}</h4>
-    <img src={{post.image}} alt={{post.title}} />
-  </div><br>
-{{/each}}
+<div class="wrap">
+  {{#each model as |post|}}
+    <div class="conspiracy">
+      <h4>{{post.title}}</h4>
+      <img src={{post.image}} alt={{post.title}} />
+    </div><br>
+  {{/each}}
+</div>
