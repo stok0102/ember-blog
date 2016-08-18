@@ -11,10 +11,9 @@ export default Ember.Component.extend({
         author: this.get('author'),
         title: this.get('title'),
         category: this.get('category'),
-        content: this.get('content'),
+        content: this.get('content').split(/(\n)\W/ig),
         image: this.get('image'),
       };
-      console.log(params.content.split(/(\n)\W/ig));
       this.set('updatePostForm', false);
       this.sendAction('update', model, params);
     }

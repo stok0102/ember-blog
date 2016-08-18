@@ -5,11 +5,11 @@ export default Ember.Component.extend({
     save() {
       var params = {
         username: this.get('username'),
-        content: this.get('content'),
+        commentContent: this.get('commentContent'),
         mood: this.get('mood'),
         post: this.get('post'),
       };
-      this.sendAction('save', params)
+      this.sendAction('save', params);
     }
   }
 });
