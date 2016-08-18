@@ -1,1 +1,6 @@
 {{post-detail model=model destroyPost="destroyPost" update="update"}}
+{{new-comment save="save" post=model}}
+<h3>Comments</h3>
+{{#each model.comments as |comment|}}
+  {{comment-tile comment=comment destroyComment="destroyComment"}}
+{{/each}}

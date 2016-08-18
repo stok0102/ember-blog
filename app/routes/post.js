@@ -14,9 +14,26 @@ export default Ember.Route.extend({
       });
       model.save();
     },
-    destroyPost(model) {
-      model.destroyRecord();
+    destroyPost(post) {
+      var comment_deletions = post.get('comments').map(function(comment) {
+        return comment.destroyRecord();
+      });
+      Ember.RSVP.all(comment_deletions).then(function() {
+        return post.destroyRecord();
+      });
       this.transitionTo('index');
+    },
+    save(params) {
+      var newComment = this.store.createRecord('comment', params);
+      var post = params.post;
+      post.get('comments').addObject(newComment)
+      newComment.save().then(function() {
+        return post.save();
+      });
+      this.transitionTo('post', params.post);
+    },
+    destroyComment(comment) {
+      comment.destroyRecord();
     }
   }
 });
