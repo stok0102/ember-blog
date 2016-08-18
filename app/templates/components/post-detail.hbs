@@ -5,9 +5,11 @@
     <h5>by {{model.author}}</h5>
     <h5>Case Status: {{model.category}}</h5>
     <br>
-    <p>
-      {{model.content}}
-    </p>
+      {{#each model.content as |paragraph|}}
+        <p>
+          {{paragraph}}
+        </p>
+      {{/each}}  
   </div>
   {{update-post model=model update="update"}}<br>
   <button class="btn btn-danger center-block" {{action 'delete' model}}>Shred File</button>
